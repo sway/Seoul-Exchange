@@ -1,0 +1,676 @@
+% \iffalse meta-comment
+%
+% This is diary.dtx first written by Tin Lok Wong on 2010/05/18.
+%  Revised: 2010/05/29
+%           2010/11/17
+%           2010/12/06
+%
+% Copyright (C) 2010 by Tin Lok Wong
+% ----------------------------------
+%
+% This code is written by me (Tin Lok Wong).
+% The files may be distributed freely,
+%  but do not change its contents unless you change its name too.
+% If you modify my code, then please attribute appropriately.
+% The code is not written for money.
+%
+% \fi
+%
+% \iffalse
+%<*driver>
+\ProvidesFile{diary.dtx}[2010/12/06 v1.1 Macros for diaries]
+\documentclass[a4paper]{ltxdoc}
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+ \DocInput{diary.dtx}
+ \Finale
+ \PrintChanges
+ \PrintIndex
+\end{document}
+%</driver>
+% \fi
+%
+% \CheckSum{329}
+%
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+%
+% \GetFileInfo{diary.dtx}
+%
+% \DoNotIndex{\newcommand,\newenvironment,\renewenvironment,\renewcommand,\providecommand,
+%             \\,\par,\protect,\protected@edef,\setcounter,\settowidth,\usecounter,\value,
+%             \begin,\end,\begingroup,\endgroup,\csname,\endcsname,\global,\sloppy,
+%             \newlength,\setlength,\addtolength,\advance,\expandafter,\noexpand,
+%             \newcounter,\newif,\def,\gdef,\xdef,\edef,\let,\@firstofone,\@ifclassloaded,
+%             \baselineskip,\space,\relax,\@empty,\@plus,\p@,\and,\or,\box,\sbox,\wd,
+%             \m@ne,\z@,\null,\makebox,\refstepcounter,\rule,\stretch,\addvspace,
+%             \@tempboxa,\@tempcmd,\@tempskipa,\number,\numberline,\nobreakspace,
+%             \if@minipage,\if@openright,\if@restonecol,\if@twocolumn,
+%             \ifcase,\ifdim,\iffalse,\if,\ifx,\ifnum,\else,\fi,\@latex@warning,
+%             \ClassWarning,\ClassInfo,\PackageError,\PackageWarning,\PackageInfo,
+%             \ClassWarningNoLine,\MessageBreak,
+%             \ProcessOptions,\CurrentOption,\DeclareOption,\ExecuteOptions,
+%             \AtBeginDocument,\AtEndDocument,\AtEndOfClass,\LoadClass,\PassOptionsToClass,
+%             \RequirePackage,\@ifpackageloaded,\addtocontents,\contentsline,\typeout,
+%             \@float,\end@float,\@parboxrestore,\@starttoc,\@svsec,\@svsechd,\@xxvpt,
+%             \@afterheading,\@afterindentfalse,\@biblabel,\@captype,\sfcode,\@setfontsize,
+%             \@chapapp,\@idxitem,\@makepagecaption,\@minipagefalse,\@thanks,\@auxout,
+%             \@noitemerr,\@openbib@code,\@seccntformat,\@setminipage,\@topnewpage,
+%             \@xsect,\abovecaptionskip,\addcontentsline,\belowcaptionskip,\arabic,\chapter,
+%             \cleardoublepage,\clearpage,\columnsep,\columnseprule,
+%             \@gobble,\nobreak,\@hangfrom,\@mkboth,\@undefined,
+%             \@beginparpenalty,\@clubpenalty,\@endparpenalty,\@lowpenalty,\clubpenalty,
+%             \interlinepenalty,\widowpenalty,
+%             \@restonecolfalse,\@restonecoltrue,\@topnum,
+%             \.,\,,\@@par,\@Alph,\@M,\@arabic,\@m,\hb@xt@,\p@enumiv,
+%             \c@chapter,\c@enumiv,\c@secnumdepth,\secdef,\pagenumbering,\pagestyle,
+%             \paperheight,\paperwidth,\parindent,\parsep,\parskip,
+%             \normalfont,\bfseries,\centering,\hfil,\vfil,\vfill,\vskip,\hsize,\hskip,\vspace,
+%             \ignorespaces,\raggedright,\thispagestyle,
+%             \LARGE,\Large,\large,\small,\normalsize,\MakeUppercase,\uppercase,\newpage,\noindent,
+%             \abstractname,\acknowledgements,\abstract,\section,\appendixname,\indexname,\thechapter,
+%             \contentsname,\dedication,\quotation,\quote,\titlepage,\theenumiv,
+%             \endlist,\endtitlepage,\month,\year,
+%             \thanks,\footnote,\footnotemark,\footnoterule,\footnotesize,\indexname
+%             \item,\itemindent,\leftmargin,\rightmargin,\labelwidth,\listparindent,\labelsep,\list,
+%             \listfigurename,\listtablename,\onecolumn,\twocolumn,
+%             \raisebox,\scriptsize,\setkeys,\define@key,\define@cmdkeys,
+%             \string,\textheight,\textsf,\the,\newdimen,\hspace,\empty,\color,\@ifnextchar,\@ifundefined,
+%             \di@,\documentclass,\dotfill,\em,\emph,\scshape,\huge,\immediate,\include,\input,\loop,\repeat,
+%             \makeatletter,\makeatother,\markboth,\newcount,\roman,\romannumeral,\subsection,
+%             \textsuperscript,\write}
+%
+%
+% ^^A |-------------|
+% ^^A | User Macros |
+% ^^A |-------------|
+% \newcommand{\file}[1]{\texttt{#1}}
+% \newcommand{\cm}{\mathrm{cm}}
+%
+%
+% \title{Writing diaries with \LaTeX}
+% \author{Tin Lok Wong}
+% \date{6~December, 2010}
+% \changes{v1.0}{2010/05/18}{Manual written.}^^A
+% \changes{v1.0}{2010/05/29}{Some typos corrected.}^^A
+%
+% \maketitle
+% \section{Introduction}
+% This aggregate of files is designed for
+%  writing diaries.
+% They are written for those
+%  who are moderately familiar with \LaTeX.
+% The actual contents of the diary
+%  is stored in the subdirectories.
+% Potentially,
+%  they can be read and typeset
+%  by another program.
+% I use a \file{tex} file called \file{diary.tex}
+%  to access these these files.
+% This |diary.tex| is called the \emph{diary driver}.
+% To produce the diary in a reader-friendly form,
+%  run \LaTeX\ through \file{diary.tex}.
+% Modifying the contents in the diary driver
+%  gives you some control in what is produced.
+% For example, you can choose to only include
+%  the diaries of May and December
+%  by using the \cmd{\filesin} command in \file{diary.tex}.
+%
+% I assume the intended reader can understand
+%  most lines of code in the diary driver,
+%  except possibly those surrounded by the
+%  \cmd{\makeatletter}\ldots\cmd{\makeatother} pair.
+% Moreover,
+%  the user has to understand and modify
+%   the diary driver himself/herself
+%  in order to change the appearance of the diary.
+% Therefore I won't write a separate user documentation.
+% To find out how to use this set of files,
+%  please read the documented code for the diary driver below,
+%  and the example thesis given at the end.
+%
+% \StopEventually{}^^A
+%
+% \section{The diary driver, documented}
+%    \begin{macrocode}
+%<*diarydriver>
+%    \end{macrocode}
+%    \begin{macrocode}
+\documentclass[a4paper,twoside]{book}
+
+%    \end{macrocode}
+% I use the standard \LaTeX\ book class.
+% A4~paper is probably standard in many places.
+% If you need to print the diary out,
+%  then please print on both sides of the paper,
+%   in which case |twoside| looks better.
+%
+% These tweak the page margins.
+% We should have on the binding edge $2\,\cm$,
+%  and on the outer edge $2.5\,\cm$.
+% Change them as appropriate.
+%    \begin{macrocode}
+\setlength{\textwidth}{\paperwidth}
+\addtolength{\textwidth}{-2cm}
+\addtolength{\textwidth}{-2.5cm}
+\setlength{\oddsidemargin}{2cm}
+\addtolength{\oddsidemargin}{-1in}
+\setlength{\evensidemargin}{2.5cm}
+\addtolength{\evensidemargin}{-1in}
+%    \end{macrocode}
+% The top and bottom margins are both set to 3cm.
+% Again, change as appropriate.
+%    \begin{macrocode}
+\setlength{\textheight}{\paperheight}
+\addtolength{\textheight}{-3cm}
+\addtolength{\textheight}{-3cm}
+\setlength{\topmargin}{-1in}
+\addtolength{\topmargin}{3cm}
+\addtolength{\topmargin}{-\headheight}
+\addtolength{\topmargin}{-\headsep}
+
+%    \end{macrocode}
+%    \begin{macrocode}
+%% Load any extra packages you need for the diary here.
+
+%    \end{macrocode}
+%    \begin{macrocode}
+
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%% All internal commands are
+%%  between the "\makeatletter ... \makeatother" pair.
+\makeatletter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    \end{macrocode}
+% \begin{macro}{\di@tempcnta}
+% \begin{macro}{\di@tempcntb}
+% \begin{macro}{\di@tempcntc}
+% \begin{macro}{\di@temptext}
+% First, we have some internal commands.
+% All temporary things go here.
+%    \begin{macrocode}
+\newcount\di@tempcnta
+\newcount\di@tempcntb
+\newcount\di@tempcntc
+\newcommand{\di@temptext}{\relax}
+
+%    \end{macrocode}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+% All `current registers' go here.
+% These stores what day, month, and year we are processing.
+%    \begin{macrocode}
+\newcounter{currentday}
+\renewcommand{\thecurrentday}{\arabic{currentday}}
+\setcounter{currentday}{0}
+\newcounter{currentmonth}
+\renewcommand{\thecurrentmonth}{\arabic{currentmonth}}
+\setcounter{currentmonth}{0}
+\newcounter{currentyear}
+\renewcommand{\thecurrentyear}{\arabic{currentyear}}
+\setcounter{currentyear}{0}
+
+%    \end{macrocode}
+% \begin{macro}{\di@montherrmes}
+% All constants are set here.
+% The following is what the user gets
+%  when he/she wants the 13th month, say.
+%    \begin{macrocode}
+\newcommand{\di@montherrmes}{No such month}
+
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\numtomonth}
+% Secondly, we have some technical commands
+%  that tells \LaTeX\ about our calendar.
+% |\numtomonth{4}| returns April;
+% |\numtomonth{7}| returns July; etc.
+%    \begin{macrocode}
+\newcommand{\numtomonth}[1]{%
+ \ifcase#1\di@montherrmes\or January\or February\or March\or
+  April\or May\or June\or July\or August\or September\or
+  October\or November\or December\else\di@montherrmes\fi%
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\numtomonthabbrv}
+% |\numtomonthabbrv{4}| returns apr;
+% |\numtomonthabbrv{7}| returns jul; etc.
+% These are used in naming directories too.
+%    \begin{macrocode}
+\newcommand{\numtomonthabbrv}[1]{%
+ \ifcase#1\di@montherrmes\or jan\or feb\or mar\or apr\or may\or
+  jun\or jul\or aug\or sep\or oct\or nov\or
+  dec\else\di@montherrmes\fi%
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\numdaysin}
+% \cmd{\numdaysin}\marg{n} returns the number of days
+%  in the $n$-th month.
+%    \begin{macrocode}
+\newcommand{\numdaysin}[1]{%
+ \ifcase#1\relax0\or31\or29\or31\or30\or31\or30\or31\or31\or30\or
+  31\or30\or31\else0\fi%
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\ordinal}
+% \cmd{\ordinal} should work for any positive integer
+%  less than~32.
+% For example,
+%  |\ordinal{1}| returns 1\textsuperscript{st};
+%  |\ordinal{11}| returns 11\textsuperscript{th}; etc.
+%    \begin{macrocode}
+\newcommand{\ordinal}[1]{%
+ \di@tempcntc=#1\relax%
+ #1%
+ \ifnum\di@tempcntc=1\textsuperscript{st}%
+  \else\ifnum\di@tempcntc=21\textsuperscript{st}%
+   \else\ifnum\di@tempcntc=31\textsuperscript{st}%
+    \else\ifnum\di@tempcntc=2\textsuperscript{nd}%
+     \else\ifnum\di@tempcntc=22\textsuperscript{nd}%
+      \else\ifnum\di@tempcntc=3\textsuperscript{rd}%
+       \else\ifnum\di@tempcntc=23\textsuperscript{rd}%
+        \else\textsuperscript{th}%
+        \fi%
+       \fi%
+      \fi%
+     \fi%
+    \fi%
+   \fi%
+  \fi%
+}
+
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\inputday}
+% Thirdly, we define some commands to
+%  input the contents of the diary.
+% The line |\inputday{m}{d}|
+%  inputs the $d$-th day in the $m$-th month of the diary,
+%  where $m$ and $d$ are arabic numbers.
+%    \begin{macrocode}
+\newcommand{\inputday}[2]{%
+ \setcounter{currentmonth}{#1}%
+ \setcounter{currentday}{#2}%
+%    \end{macrocode}
+% This controls how the day-title looks like.
+% Change it as you wish.
+% You can add some description about the day as well.
+% This is shown using \cmd{\di@showfest}.
+% See \cmd{\festival} for how to put in the description.
+%    \begin{macrocode}
+ \section*{\ordinal{#2}~\numtomonth{#1}\di@showfest{#1}{#2}}
+%    \end{macrocode}
+% This controls what goes into the header.
+% Feel free to change it to what you want.
+%    \begin{macrocode}
+ \markboth{\scshape The Diaries of \@author}%
+          {\scshape\ordinal{#2}~\numtomonth{#1}}%
+%    \end{macrocode}
+% This controls what goes into the table of contents.
+%    \begin{macrocode}
+ \addcontentsline{toc}{section}{\ordinal{#2}~\numtomonth{#1}}%
+%    \end{macrocode}
+% This inputs the file.
+%    \begin{macrocode}
+ \input{\numtomonthabbrv{#1}/#2}%
+%    \end{macrocode}
+% \changes{v1.0}{2010/11/17}{Penalty added.}^^A
+% If many diary days are empty,
+%  then there will be many section titles stuck together
+%   because a page break is discouraged after a section title.
+% This will cause many overfull and/or underfull boxes.
+% To solve this problem,
+%  we allow a page to break after inputting the file.
+% There may be an issue that
+%  some \cmd{\penalty}s at the end of the file is reset,
+%  but in most practical cases,
+%   this seems to work as required.
+%    \begin{macrocode}
+ \penalty0%
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\includemonth}
+% |\includemonth{m}| includes the $m$-th month into the diary,
+%  where $m$ is an arabic number.
+%    \begin{macrocode}
+\newcommand{\includemonth}[1]{%
+ \setcounter{currentmonth}{#1}%
+%    \end{macrocode}
+% The \file{main.tex} in the corresponding directory
+%  contains instructions to input all files in that location.
+%    \begin{macrocode}
+ \include{\numtomonthabbrv{#1}/main}%
+}
+%    \end{macrocode}
+% |\inputdaysin{m}| inputs all the diary entries in the $m$-th month,
+%  where $m$ is an arabic number.
+%    \begin{macrocode}
+\newcommand{\inputdaysin}[1]{%
+ \setcounter{currentmonth}{#1}%
+%    \end{macrocode}
+% This controls how the month-title looks like.
+% Change it as you wish.
+%    \begin{macrocode}
+ \chapter*{\numtomonth{#1}}
+%    \end{macrocode}
+% This tells \LaTeX\ what to put in the table of contents.
+%    \begin{macrocode}
+ \addcontentsline{toc}{chapter}{\numtomonth{#1}}%
+%    \end{macrocode}
+% The inputting is done by a loop.
+%    \begin{macrocode}
+ \di@tempcnta=0%
+ \loop%
+  \advance\di@tempcnta by 1%
+  \inputday{\thecurrentmonth}{\the\di@tempcnta}%
+  \ifnum\di@tempcnta<\numdaysin{\thecurrentmonth}%
+ \repeat%
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\makewholediary}
+% \cmd{\makewholediary} makes the whole diary.
+%    \begin{macrocode}
+\newcommand{\makewholediary}{%
+%    \end{macrocode}
+% A loop is used as well.
+% A loop counter different from that in \cmd{\inputdaysin}
+%  has to be used.
+%    \begin{macrocode}
+ \di@tempcntb=0%
+ \loop%
+  \advance\di@tempcntb by 1%
+%    \end{macrocode}
+% The extra pair of braces is needed for the nested loop.
+% See page~218 of the \TeX book.
+%    \begin{macrocode}
+  {\includemonth{\the\di@tempcntb}}%
+  \ifnum\di@tempcntb<12%
+ \repeat%
+}
+
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\inyear}
+% Fourthly, we define some commands to help you type your diary.
+% The line |\inyear{2010}{Sunday}| tells \LaTeX\
+%  that we are writing about the year 2010,
+%  and the day in consideration is a Sunday.
+%    \begin{macrocode}
+\newcommand{\inyear}[2]{%
+ \subsection*{#1~\dotfill~#2}%
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\daycomment}
+% This is supposed to be put immediately after \cmd{\inyear}
+% For example, you can say something like
+%  |\daycomment{I got married today!}|.
+% Line breaks are allowed in the argument.
+% \changes{v1.0}{2010/05/29}{The final \cs{par} removed.}%
+%    \begin{macrocode}
+\newcommand{\daycomment}[1]{%
+ \begin{flushright}\em#1\end{flushright}%
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\festival}
+% This specifies what `festival' it is for a particular day.
+% For example, you can put
+%   |\festival{Christmas}|
+%  in the \file{dec/25.tex} file.
+% This uses the \file{aux} file,
+%  and so you may have to run \LaTeX\ up to three times
+%  to get everything right.
+% \changes{v1.1}{2010/12/06}{Use of \cmd{\noexpand} suggested.}
+% In addition,
+%  all macros inside the argument need to be protected by a \cmd{\noexpand}.
+%    \begin{macrocode}
+\newcommand{\festival}[1]{%
+ \di@makefest{\numtomonthabbrv{\thecurrentmonth}}%
+             {\roman{currentday}}{#1}%
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\di@makefest}
+% This is an internal command that
+%  writes out an appropriate line to the \file{aux} file.
+%    \begin{macrocode}
+\newcommand{\di@makefest}[3]{%
+ \immediate\write\@auxout%
+%    \end{macrocode}
+% Internally, it defines a new command,
+%  the name of which is determined by
+%  the day and the month of the `festival'.
+%    \begin{macrocode}
+  {\string\gdef\string\di@#1#2{#3}}%
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\di@showfest}
+% This is another internal command.
+% It shows the name of the `festival' if it exists;
+%  otherwise, it shows nothing.
+%    \begin{macrocode}
+\newcommand{\di@showfest}[2]{%
+%    \end{macrocode}
+% This puts the relevant command into \cmd{\di@temptext}.
+%    \begin{macrocode}
+ \expandafter\let\expandafter\di@temptext%
+   \csname di@\numtomonthabbrv{#1}\romannumeral#2\endcsname
+%    \end{macrocode}
+% Then we check whether the relevant command is defined.
+% I have no idea why \cmd{\relax} is used here.
+%    \begin{macrocode}
+ \ifx\di@temptext\relax\else\space---\space\di@temptext\fi%
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\separate}\changes{v1.1}{2010/12/06}{Command added.}
+% Sometimes there are several events that one wants to record
+%   in the same day,
+%  but a paragraph break is not strong enough
+%   for separating the events.
+% We provide the command \cmd{\separate} for this purpose.
+% In theory, the diary writer can define it as anything he/she wants.
+% The default definition of it is a centered horizontal straight line.
+%    \begin{macrocode}
+\newcommand{\separate}{%
+ \begin{center}\raisebox{.5ex}{\rule{.5\textwidth}{.2pt}}\end{center}%
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\maketitle}
+% I have to redefine the title page.
+%    \begin{macrocode}
+\renewcommand{\maketitle}{%
+ \begin{titlepage}%
+  \null\vfill%
+  \begin{center}%
+   {\large\scshape THE\par}\vskip 3em%
+   {\@setfontsize\huge\@xxvpt{30}\bfseries
+    D\,I\,A\,R\,I\,E\,S\par}\vskip 3em%
+   {\large\scshape OF\par}\vskip 3em%
+   {\huge\scshape\@author}%
+  \end{center}%
+  \vfill%
+  \begin{center}\large
+   \rule{.5\textwidth}{.2pt}\vskip 1em%
+   Private and confidential\vskip 1em%
+   \number\year
+  \end{center}%
+ \end{titlepage}%
+}
+%    \end{macrocode}
+% \end{macro}
+% The diary macros end here (except \cmd{\filesin}).
+%    \begin{macrocode}
+\makeatother%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%% Any typographical commands go in here.
+
+%    \end{macrocode}
+%    \begin{macrocode}
+
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%% Any personal commands go in here.
+
+%    \end{macrocode}
+%    \begin{macrocode}
+
+%    \end{macrocode}
+%
+% \DescribeMacro{\author}^^A
+% Put in your name here.
+%    \begin{macrocode}
+\author{Diary Man}
+
+%    \end{macrocode}
+%
+% \DescribeMacro{\pagestyle}^^A
+% Changing to |myheadings| gives you headers.
+% If you don't want them,
+%  then you have to explicitly say |plain|.
+%    \begin{macrocode}
+%% \pagestyle{myheadings}
+\pagestyle{plain}
+
+%    \end{macrocode}
+%
+% \begin{macro}{\filesin}
+% This is a technical command
+%  which enables you to include particular months
+%  in the diary.
+%    \begin{macrocode}
+\newcommand{\filesin}[1]{%
+%    \end{macrocode}
+% This is the name of the relevant file.
+%    \begin{macrocode}
+ \numtomonthabbrv{#1}/main%
+}
+%    \end{macrocode}
+% \end{macro}
+% \DescribeMacro{\includeonly}^^A
+% Change the following line to
+%   |\includeonly{\filesin{5},\filesin{12}}|
+%  includes only May and December.
+% To include everything, omit the line altogether.
+%    \begin{macrocode}
+\includeonly{\filesin{5},\filesin{8},\filesin{9}}
+
+%    \end{macrocode}
+% The following prevents days in the month from appearing
+%  in the table of contents,
+%    \begin{macrocode}
+\setcounter{tocdepth}{0}
+
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\begin{document}
+%    \end{macrocode}
+% \DescribeMacro{\maketitle}^^A
+% This makes the title page of the diary.
+%    \begin{macrocode}
+\maketitle
+%    \end{macrocode}
+% \DescribeMacro{\tableofcontents}^^A
+% This makes the table of contents if needed.
+%    \begin{macrocode}
+%% \tableofcontents
+%    \end{macrocode}
+% \DescribeMacro{\makewholediary}^^A
+% This makes the relevant parts of the diary.
+%    \begin{macrocode}
+\makewholediary
+%    \end{macrocode}
+%    \begin{macrocode}
+\end{document}
+%    \end{macrocode}
+%    \begin{macrocode}
+%</diarydriver>
+%    \end{macrocode}
+%
+% \section{The month driver}
+% The following goes into
+%  the driver files for individual months.
+% These month drivers are used to
+%  include all the days in a month.
+% They are separated from the main diary driver
+%  so that they can be \cmd{\include}d properly.
+%    \begin{macrocode}
+%<*monthdriver>
+\inputdaysin{\thecurrentmonth}
+%</monthdriver>
+%    \end{macrocode}
+%
+% \section{An example day}
+% The structure of the diary is organized as follows.
+% There should be a separate directory for each month.
+% Each day of the month has its own file
+%  inside the corresponding directory.
+% For example,
+%  the file \file{25.tex} in the directory |dec|
+%  is supposed to contain everything about
+%   the 25\textsuperscript{th} of December.
+% The following is an example of how
+%    |dec/25.tex|
+%  may look like.
+% Rename it, move it to the right place,
+%  and see how it looks like after \LaTeX ing.
+%    \begin{macrocode}
+%<*egday>
+\festival{Christmas}
+\inyear{2009}{Friday}
+It's sunny and warm today.
+I went out with my girlfriend to the Central area
+ where there were plenty of festive events going on.
+We had a very nice time.
+In the evening,
+ I went back to have Christmas dinner with my family
+ in a nearby restaurant.
+It was overly expensive,
+ but no one seemed to care.
+
+\inyear{2010}{Saturday}
+\daycomment{My first white Christmas!}
+I've seen so many scenes of white Christmas on TV,
+ but this is the first time I \emph{experience} it!
+It was not as exciting as I expected though.
+In this country, all the shops are closed today,
+ and we could only feed on what we bought
+ a couple of days ago.
+The dinner my wife made was wonderful!
+%</egday>
+%    \end{macrocode}
+\endinput
