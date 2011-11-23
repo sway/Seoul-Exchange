@@ -23,8 +23,7 @@ def processPost(post):
 	f = open("data/" + filename, "w")
 	
 	f.write('\\begin{post}\n')
-	f.write('\t\\posttitle{' + title + '}\n')
-	f.write('\t\\postdate{' + str(dt.year) + '}{' + str(dt.month) + '}{' + str(dt.day) + '}{' + str(dt.hour) + '}{' + str(dt.minute) + '}{' + str(dt.second) + '}\n')
+	f.write('\t\\postdata{' + title + '}{' + str(dt.year) + '}{' + str(dt.month) + '}{' + str(dt.day) + '}{' + str(dt.hour) + '}{' + str(dt.minute) + '}{' + str(dt.second) + '}\n')
 	f.write('\t\\begin{content}\n')
 	f.write(content + '\n')
 	f.write('\t\\end{content}\n')
