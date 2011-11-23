@@ -29,7 +29,7 @@
 
 \usepackage{graphicx}
 \usepackage{amssymb}
-\usepackage[parfill]{parskip}
+\usepackage{parskip}
 \usepackage{layout}
 \usepackage{wrapfig}
 \usepackage{fancyhdr}
@@ -37,7 +37,14 @@
 \usepackage{tikz}
 \usepackage[explicit]{titlesec}
 \usepackage{titletoc}
-\usepackage{minitoc}
+\usepackage{mdwlist}
+\usepackage{ulem}
+\usepackage{microtype}
+\usepackage{wrapfig}
+\usepackage[tight,footnotesize,IT]{subfigure}
+\usepackage[labelformat=empty,font={footnotesize,it},skip=5pt]{caption}
+%\usepackage{minitoc}
+%\usepackage{tocloft}
 
 %%%
 
@@ -110,15 +117,31 @@ text depth=10mm,text width=\pagenumwidth}}
 
 %%% Post data
 
-\newenvironment{post}[0]{}{\hrule}
-\newenvironment{content}[0]{}{}
+\newenvironment{post}[0]{}{\vskip 10pt
+\hrule
+{\color{Aluminium3}\itshape\small \postmeta}\clearpage}
+
+\newenvironment{content}[0]{}{\vfill}
+
+\newenvironment{blockquote}[0]{
+	\begin{tikzpicture}[remember picture,overlay]
+		\node[anchor=west,align=left,yshift=-50pt]{{\fontsize{120}{120}\color{Aluminium2}{\R ``}}};
+	\end{tikzpicture}\begin{quote}\addtolength{\leftskip}{10mm}\Large\itshape}{\end{quote}\vspace{10pt}}
 
 \newcommand{\postdata}[7]{
-	\def\postd{#4/#3/#2}
-	\def\postmeta{Created on \postd at #5:#6:#7}
+	\def\postd{#4.#3.#2}
+	\def\postmeta{Published on\ \postd\ at\ #5:#6:#7}
 	\section{#1}
 }
 
+\newcommand{\newmonth}[2]{
+	\def\monthstuff{#2}
+	\chapter{#1}
+    \def\monthstuff{}
+	\startcontents[sections]
+	\printcontents[sections]{l}{1}{{\setcounter{tocdepth}{1}}}
+	\vfill
+}
 
 %%%
 
@@ -127,19 +150,28 @@ text depth=10mm,text width=\pagenumwidth}}
 \newcommand*\chapterlabel{}
 \titleformat{\chapter}{\gdef\chapterlabel{}\Huge\bfseries}{\gdef\chapterlabel{}}{0pt}
   {\begin{tikzpicture}[remember picture,overlay]
-  \node[anchor=west,text width=\textwidth,align=left,xshift=-10pt] at (current page.north west) {{\normalfont\itshape\large``The most expensive month ever''}};
-  \node[anchor=west,text width=\textwidth,align=right,xshift=-10pt,yshift=-150pt] at (current page.north west) {\chapterlabel#1};
-  \draw[line width=1pt,draw=Plum,yshift=10pt](0,0) -- (\textwidth,0);
+  \node[anchor=west,text width=\textwidth,align=left,xshift=0pt] at (current page.north west) {{\normalfont\itshape\Large{\monthstuff}}};
+  \node[anchor=west,text width=\textwidth,align=right,xshift=-5pt,yshift=-170pt] at (current page.north west) {\chapterlabel#1};
+  \draw[line width=1pt,draw=Plum,yshift=-165pt](0,0) -- (\textwidth,0);
    \end{tikzpicture}
-   \minitoc
-  }
-\titlespacing*{\chapter}{0pt}{150pt}{20pt}
-
+   }
+\titlespacing*{\chapter}{0pt}{0pt}{180pt}
 
 \def\postd{}
 \def\posttitle{}
-\titleformat{\section}{\huge\bfseries}{\textcolor{LightSkyBlue}{\normalfont\postd}\ \ }{0pt}{\textbf{#1}}
+\def\monthstuff{}
+
+\titleformat{\section}{\huge\bfseries}{\textcolor{LightSkyBlue}{\normalfont\L\postd\ \ //\ \ }}{0pt}{\textbf{#1}}
 \titlespacing*{\section}{0pt}{0pt}{0pt}
+
+\titleformat{\subsection}{\large}{}{0pt}{\large\textcolor{Plum}{\textbf{#1}}}
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+
+\titlecontents*{lsection}[0pt]{\normalfont\large\itshape\color{Aluminium3}\raggedleft}{}{}{}[\ \ \textbullet~~][]
+\titlecontents*{lsubsection}[0pt]{}{}{}{}[][]
+
+\titlecontents{chapter}[1em]{}{\textbf}{\textbf}{{\L\titlerule*[5pt]{.}}\contentspage}[\vspace{2pt}]
+
 %%%
 
 %%% Font setting
@@ -147,7 +179,25 @@ text depth=10mm,text width=\pagenumwidth}}
 \defaultfontfeatures{Mapping=tex-text}
 \setromanfont[Mapping=tex-text]{Myriad Pro}
 
+\newfontfamily{\H}{Nanum Myeongjo}
+\newfontfamily{\L}{Myriad Pro Light}
+\newfontfamily{\R}{Georgia}
+
 %%%
+
+\setlength{\fboxsep}{0pt}
+\setlength{\fboxrule}{0.5pt}
+\setlength{\parskip}{3ex plus 2ex minus 2ex}
+
+\setcounter{tocdepth}{0}
+
+\widowpenalty=1000
+\clubpenalty=1000
+
+\captionsetup[subfigure]{labelformat=empty,font={footnotesize,it},skip=5pt}
+\captionsetup[figure]{labelformat=empty,font={footnotesize,it},skip=5pt}
+\renewcommand{\thesubfigure}{}
+
 
 
 
@@ -159,92 +209,32 @@ text depth=10mm,text width=\pagenumwidth}}
 \begin{document}
 
 %%% minitoc init
-\dominitoc[e]
-\nomtcrule
-\nomtcpagenumbers
-\faketableofcontents
+%\dominitoc[e]
+%\nomtcrule
+%\nomtcpagenumbers
+%\faketableofcontents
 %%%
 
-\maketitle
+\input{titlepage}
 
-\chapter{Introduction}
-\section*{Foobar}
-Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.
+\chapter*{Introduction}
+After these 4 months I can't even believe I was actually deciding whether I should come to Seoul or not. What was I thinking for God's sake. What would possibly be better than spending 4 months in a country where girls wear heels and short skirt, the McDonalds has a delivery service and where tomorrow really means today, because there is a 8 hour time difference.
 
-Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular\begin{wrapfigure}{r}{0.40\textwidth}
-  \vspace{-12pt}
-  \setlength{\fboxsep}{0pt}
-  \includegraphics[width=0.40\textwidth]{/Users/honza/Desktop/P1010349.jpg}\vspace{-25pt}
-\end{wrapfigure} gun in American crime.Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. 
+\tableofcontents
 
-Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. 
+\newmonth{September 2011}{``So it begins...''}
 
-The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
+\input{09}
 
-\chapter{September 2011}
+\newmonth{October 2011}{``I wonder if you know, how they live in Tokyo...''}
 
-\begin{post}
-	\postdata{Explanation}{2011}{9}{9}{13}{25}{57}
-	\begin{content}
-	Just to make sure that everybody knows whats going on...
+\input{10}
 
-As you might know, I am doing my MSc. in The Netherlands, at the Delft University of Technology. Last year I found out that our faculty has several agreements with universities all around the world regarding exchange programs. Well, that naturally caught my attention so I started thinking about going further abroad for another semester. I have decided to go to Asia, because Europe does not make sense for me and I did not feel like going to the USA or another English-speaking country. Moreover, the Asian culture is so different from Europe that any experience with it might be very valuable. There were basically three choices — Harbin in China, Tokyo in Japan and Seoul in Korea. Because Harbin was only for two months and Japan is quite expensive and maybe a little too <del>weird</del> different, I have decided to come to KAIST Business School in Seoul, which is a MBA oriented part of the otherwise technically oriented KAIST university in Daejeon.
+\newmonth{November 2011}{``The most expensive month so far...''}
 
-The application and organization was a bit of a struggle, but luckily everything worked out fine and I was admitted to the Fall 2011 Exchange program. I am focusing mainly at Information and Media MBA, which is in line with my planned master thesis direction. I will spend 4 months here and then come back to Delft to start working on my master thesis. So, that's why I am here and not in Europe. Simple, right...
-	\end{content}
-	\postmeta
-\end{post}
-
-\chapter{October 2011}
-
-\chapter{November 2011}
+%\input{11}
 
 \chapter{December 2011}
 
-Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.
-
-Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. 
-
-Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. 
-
-The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
-
-Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.
-
-Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. 
-
-Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. 
-
-The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
-
-Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.
-
-Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. 
-
-Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. 
-
-The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
-
-Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.
-
-Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. 
-
-Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. 
-
-The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
-
-advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. 
-
-Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. 
-
-The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
-
-Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.
-
-Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. 
-
-Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. 
-
-The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
 
 \end{document}  
