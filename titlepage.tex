@@ -3,29 +3,28 @@
 \begin{titlepage}
 
 \begin{tikzpicture}[remember picture,overlay]
-    	\node[xshift=(0.5\paperwidth-2cm),yshift=-7cm] at (current page.north west |- (0,0) {
+	\draw[fill=Plum,draw=Plum] (current page.north east |- (3cm,1cm) rectangle (current page.north east);
+  	\node[anchor=east] at (current page.north east) {\color{white}\Huge \T Seoul Exchange};
+    	\node[xshift=(0.5\paperwidth-2cm),yshift=-8cm] at (current page.north west |- (0,0) {
 		\begin{tikzpicture}[remember picture,overlay]
-			\pgftext{\includegraphics[width=1.2\paperwidth]{photos/cover.jpg}};
+			\pgftext{\includegraphics[width=1.05\paperwidth]{photos/cover.jpg}};
 	    \end{tikzpicture}
     };
-    	\node at (current page.north west) {
-		\begin{tikzpicture}[remember picture,overlay]
-			\draw[fill=Plum,draw=Plum] (-3cm,3cm) rectangle (1.2\paperwidth,1.5cm);
-	    \end{tikzpicture}
-    };
-    	\node[yshift=2.5cm] at (current page.south west) {
-		\begin{tikzpicture}[remember picture,overlay]
-			\draw[fill=Plum,draw=Plum] (-3cm,0) rectangle (1.2\paperwidth,1cm);
-	    \end{tikzpicture}
-    };
+%    	\node at (current page.north west) {
+%		\begin{tikzpicture}[remember picture,overlay]
+%			\draw[fill=Plum,draw=Plum] (-3cm,3cm) rectangle (1.2\paperwidth,1.5cm);
+%	    \end{tikzpicture}
+%    };
+%    	\node[yshift=2.5cm] at (current page.south west) {
+%		\begin{tikzpicture}[remember picture,overlay]
+%			\draw[fill=Plum,draw=Plum] (-3cm,0) rectangle (1.2\paperwidth,1cm);
+%	    \end{tikzpicture}
+%    };
 \end{tikzpicture}
 
 \begin{tikzpicture}[remember picture,overlay]
-  	\node[anchor=west,fill=LightPlum,text width=\paperwidth,inner sep=0.3cm,xshift=5.2cm,yshift=-0.5cm]{\color{white}\fontsize{40}{40} \L S(e)oul\ \ eXchange};
-\end{tikzpicture}
-
-\begin{tikzpicture}[remember picture,overlay]
-  	\node[anchor=west,fill=LightPlum,text width=\paperwidth,inner sep=0.3cm,xshift=8.2cm,yshift=-1.5cm]{\itshape\color{white}\fontsize{20}{20} \L Honza\ \ Ustohal};
+  	\node[anchor=west,text width=\paperwidth,inner sep=0.3cm,xshift=-2.5cm,yshift=-6cm,opacity=0.4,transparency group]{\color{white}\fontsize{150}{150} \TB SEOUL\\EXCHANGE};
+  	%\node[anchor=west,text width=\paperwidth,inner sep=0.3cm,xshift=-1cm,yshift=-8.2cm,opacity=1.0,transparency group]{\color{white}\fontsize{80}{80} \TB SEOUL\\EXCHANGE};
 \end{tikzpicture}
 
 \end{titlepage}
