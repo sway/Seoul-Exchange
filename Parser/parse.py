@@ -20,7 +20,7 @@ def processPost(post):
 	
 	content = post.findtext("content_encoded").encode('utf8')
 	
-	f = open("data/" + filename, "w")
+	f = open(filename, "w")
 	
 	f.write('\\begin{post}\n')
 	f.write('\t\\postdata{' + title + '}{' + str(dt.year) + '}{' + str(dt.month) + '}{' + str(dt.day) + '}{' + str(dt.hour) + '}{' + str(dt.minute) + '}{' + str(dt.second) + '}\n')

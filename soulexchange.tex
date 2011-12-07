@@ -1,27 +1,48 @@
-% XeLaTeX can use any Mac OS X font. See the setromanfont command below.
-% Input to XeLaTeX is full Unicode, so Unicode characters can be typed directly into the source.
-
-% The next lines tell TeXShop to typeset with xelatex, and to open and save the source with Unicode encoding.
-
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[11pt,twoside,a5paper,landscape,openright]{book}
-\usepackage[a5paper]{geometry}
+\documentclass[11pt,twoside,a5paper,landscape]{book}
+\usepackage{geometry}
+%\usepackage[a5paper,landscape,twoside]{geometry}
+
+%\geometry{a4paper,layoutwidth=210mm,layoutheight=148mm,layouthoffset=1.81cm,layoutvoffset=3.1cm,twoside,showcrop,landscape}
+\geometry{a5paper,landscape,twoside}
+
+\geometry{
+	top=0.6cm,
+	left=2.5cm,
+	right=1cm,
+	text={17cm,11.2cm},
+	headheight=\baselineskip,
+	headsep=\baselineskip,
+	footskip=30pt,
+	marginparsep=0pt,
+	marginparwidth=0pt,
+	includehead	
+}
 
 % Paper layout settings
-\setlength{\hoffset}{-1in}
-\setlength{\voffset}{-1in}
-\setlength\textwidth{17.5cm}
-\setlength\topmargin{0.6cm}
-\setlength\headheight{\baselineskip}
-\setlength\headsep{\baselineskip}
-\setlength\textheight{11.2cm}
-\setlength\footskip{30pt}%
-\setlength\marginparsep{0pt}
-\setlength\marginparwidth{0pt}
-\setlength\evensidemargin{1cm}
-\setlength\oddsidemargin{2.5cm}
+%\setlength{\hoffset}{1.81cm}
+%\setlength{\voffset}{0.56cm}
+
+%\setlength{\hoffset}{-1in}
+%\setlength{\voffset}{-1in}
+
+
+%\setlength\textwidth{17.5cm}
+%\setlength\topmargin{0.6cm}
+%\setlength\headheight{\baselineskip}
+%\setlength\headsep{\baselineskip}
+%\setlength\textheight{11.2cm}
+%\setlength\footskip{30pt}%
+%\setlength\marginparsep{0pt}
+%\setlength\marginparwidth{0pt}
+
+
+%\setlength\evensidemargin{1cm}
+%\setlength\oddsidemargin{2.5cm}
+
+\usepackage[cam,a4,center,landscape,noinfo]{crop}
 
 %%%
 
@@ -43,6 +64,9 @@
 \usepackage{wrapfig}
 \usepackage[tight,footnotesize,IT]{subfigure}
 \usepackage[labelformat=empty,font={footnotesize,it},skip=5pt]{caption}
+%\usepackage{atbegshi}
+
+
 %\usepackage{minitoc}
 %\usepackage{tocloft}
 
@@ -88,7 +112,7 @@
 \tikzset{pagefooter/.style={
 anchor=base,
 text=white,fill=LightPlum,text centered,
-text depth=10mm,text width=\pagenumwidth}}
+text depth=15mm,text width=\pagenumwidth}}
 
 \fancypagestyle{headings}{%
   \fancyhf{} 
@@ -150,8 +174,8 @@ text depth=10mm,text width=\pagenumwidth}}
 \newcommand*\chapterlabel{}
 \titleformat{\chapter}{\gdef\chapterlabel{}\Huge\bfseries}{\gdef\chapterlabel{}}{0pt}
   {\begin{tikzpicture}[remember picture,overlay]
-  \node[anchor=west,text width=\textwidth,align=left,xshift=0pt] at (current page.north west) {{\normalfont\itshape\Large{\monthstuff}}};
-  \node[anchor=west,text width=\textwidth,align=right,xshift=-5pt,yshift=-170pt] at (current page.north west) {\chapterlabel#1};
+  \node[anchor=west,text width=\textwidth,align=left,xshift=0pt] at (0,0) {{\normalfont\itshape\Large{\monthstuff}}};
+  \node[anchor=west,text width=\textwidth,align=right,xshift=-5pt,yshift=-150pt] at (0,0) {\chapterlabel#1};
   \draw[line width=1pt,draw=Plum,yshift=-165pt](0,0) -- (\textwidth,0);
    \end{tikzpicture}
    }
@@ -235,7 +259,7 @@ After these 4 months I can't even believe I was actually deciding whether I shou
 
 \newmonth{November 2011}{``The most expensive month so far...''}
 
-%\input{11}
+\input{11}
 
 \chapter{December 2011}
 
