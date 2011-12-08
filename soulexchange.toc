@@ -41,5 +41,10 @@
 \contentsline {subsection}{\numberline {3.1.11}...you sometimes feel like you are a part of a big freak show.}{51}
 \contentsline {section}{\numberline {3.2}Between the South and the North}{52}
 \contentsline {section}{\numberline {3.3}The Best College Day™}{58}
-\contentsline {chapter}{\numberline {4}December 2011}{61}
+\contentsline {section}{\numberline {3.4}Fieeeeeeld triiiiiip!}{60}
+\contentsline {section}{\numberline {3.5}Culinary Adventures II.}{64}
+\contentsline {subsection}{\numberline {3.5.1}Fast foods}{65}
+\contentsline {subsection}{\numberline {3.5.2}Tonkatsu!}{66}
+\contentsline {section}{\numberline {3.6}Time goes by...}{68}
+\contentsline {chapter}{\numberline {4}December 2011}{71}
 \contentsfinish 
