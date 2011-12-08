@@ -42,8 +42,10 @@
 %\setlength\evensidemargin{1cm}
 %\setlength\oddsidemargin{2.5cm}
 
-\usepackage[cam,a4,center,landscape,noinfo]{crop}
-
+\ifx\showcrops\undefined
+\else
+	\usepackage[cam,a4,center,landscape,noinfo]{crop}
+\fi
 %%%
 
 %%% Custom packages
