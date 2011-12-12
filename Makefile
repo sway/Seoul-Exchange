@@ -4,7 +4,7 @@ PROJECT = soulexchange
 TITLE = Seoul_Exchange
 
 all: 	pdf
-	open -g ${PROJECT}.pdf
+
 pdf:
 	${LATEX} ${PROJECT}.tex 
 

@@ -3,9 +3,7 @@
 
 \documentclass[11pt,twoside,a5paper,landscape]{book}
 \usepackage{geometry}
-%\usepackage[a5paper,landscape,twoside]{geometry}
 
-%\geometry{a4paper,layoutwidth=210mm,layoutheight=148mm,layouthoffset=1.81cm,layoutvoffset=3.1cm,twoside,showcrop,landscape}
 \geometry{a5paper,landscape,twoside}
 
 \geometry{
@@ -20,27 +18,6 @@
 	marginparwidth=0pt,
 	includehead	
 }
-
-% Paper layout settings
-%\setlength{\hoffset}{1.81cm}
-%\setlength{\voffset}{0.56cm}
-
-%\setlength{\hoffset}{-1in}
-%\setlength{\voffset}{-1in}
-
-
-%\setlength\textwidth{17.5cm}
-%\setlength\topmargin{0.6cm}
-%\setlength\headheight{\baselineskip}
-%\setlength\headsep{\baselineskip}
-%\setlength\textheight{11.2cm}
-%\setlength\footskip{30pt}%
-%\setlength\marginparsep{0pt}
-%\setlength\marginparwidth{0pt}
-
-
-%\setlength\evensidemargin{1cm}
-%\setlength\oddsidemargin{2.5cm}
 
 \ifx\showcrops\undefined
 \else
@@ -66,6 +43,8 @@
 \usepackage{wrapfig}
 \usepackage[tight,footnotesize,IT]{subfigure}
 \usepackage[labelformat=empty,font={footnotesize,it},skip=5pt]{caption}
+\usepackage[pdftitle={S(e)oul eXchange}, pdfauthor={Honza Ustohal}, bookmarks=true, colorlinks=false, unicode=true]{hyperref}
+
 %\usepackage{atbegshi}
 
 
@@ -149,10 +128,10 @@ text depth=15mm,text width=\pagenumwidth}}
 
 \newenvironment{content}[0]{}{\vfill}
 
-\newenvironment{blockquote}[0]{
+\newenvironment{blockquote}[0]{\setlength{\parskip}{10pt}
 	\begin{tikzpicture}[remember picture,overlay]
 		\node[anchor=west,align=left,yshift=-50pt]{{\fontsize{120}{120}\color{Aluminium2}{\R ``}}};
-	\end{tikzpicture}\begin{quote}\addtolength{\leftskip}{10mm}\Large\itshape}{\end{quote}\vspace{10pt}}
+	\end{tikzpicture}\begin{quote}\addtolength{\leftskip}{10mm}\Minion\Large\itshape}{\end{quote}\vspace{10pt}}
 
 \newcommand{\postdata}[7]{
 	\def\postd{#4.#3.#2}
@@ -187,7 +166,7 @@ text depth=15mm,text width=\pagenumwidth}}
 \def\posttitle{}
 \def\monthstuff{}
 
-\titleformat{\section}{\huge\bfseries}{\textcolor{LightSkyBlue}{\normalfont\T\postd\ \ //\ \ }}{0pt}{{\TB #1}}
+\titleformat{\section}{\huge\bfseries}{\textcolor{LightSkyBlue}{\normalfont\TL\postd\ \ //\ \ }}{0pt}{{\TB #1}}
 \titlespacing*{\section}{0pt}{0pt}{0pt}
 
 \titleformat{\subsection}{\large}{}{0pt}{\large\textcolor{Plum}{\textbf{#1}}}
@@ -209,8 +188,10 @@ text depth=15mm,text width=\pagenumwidth}}
 \newfontfamily{\L}{Myriad Pro Light}
 \newfontfamily{\R}{Georgia}
 %\newfontfamily{\T}{Champagne & Limousines}
-\newfontfamily{\T}{Diavlo Light Regular}
+\newfontfamily{\TL}{Diavlo Light Regular}
+\newfontfamily{\TR}{Diavlo Book Regular}
 \newfontfamily{\TB}{Diavlo Black Regular}
+\newfontfamily{\Minion}{Minion Pro}
 
 %%%
 
@@ -227,43 +208,38 @@ text depth=15mm,text width=\pagenumwidth}}
 \captionsetup[figure]{labelformat=empty,font={footnotesize,it},skip=5pt}
 \renewcommand{\thesubfigure}{}
 
-
-
-
-\title{Brief Article}
-\author{The Author}
-
-%\date{}                                           % Activate to display a given date or no date
-
+%%%%%
 \begin{document}
-
-%%% minitoc init
-%\dominitoc[e]
-%\nomtcrule
-%\nomtcpagenumbers
-%\faketableofcontents
-%%%
 
 \input{titlepage}
 
+\thispagestyle{empty}
+
+\newpage
+
+\setcounter{page}{1}
+
 \chapter*{Introduction}
-After these 4 months I can't even believe I was actually deciding whether I should come to Seoul or not. What was I thinking for God's sake. What would possibly be better than spending 4 months in a country where girls wear heels and short skirt, the McDonalds has a delivery service and where tomorrow really means today, because there is a 8 hour time difference.
+
+\input{introduction}
 
 \tableofcontents
 
-\newmonth{September 2011}{``So it begins...''}
+\newmonth{September 2011}{``So it begins\ldots''}
 
 \input{09}
 
-\newmonth{October 2011}{``I wonder if you know, how they live in Tokyo...''}
+\newmonth{October 2011}{``I wonder if you know, how they live in Tokyo\ldots''}
 
 \input{10}
 
-\newmonth{November 2011}{``The most expensive month so far...''}
+\newmonth{November 2011}{``The most expensive month so far\ldots''}
 
 \input{11}
 
-\chapter{December 2011}
+\newmonth{December 2011}{``Too bad everything good has to end\ldots''}
+
+\input{12}
 
 
 \end{document}  
