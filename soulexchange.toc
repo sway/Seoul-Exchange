@@ -16,36 +16,36 @@
 \contentsline {section}{\numberline {1.7}The best city tour ever and the tower of love}{17}{section.1.7}
 \contentsline {section}{\numberline {1.8}Autumn in Seoul}{19}{section.1.8}
 \contentsline {section}{\numberline {1.9}Finally mobile}{22}{section.1.9}
-\contentsline {section}{\numberline {1.10}Lotte World...}{24}{section.1.10}
+\contentsline {section}{\numberline {1.10}Lotte World{\dots }}{24}{section.1.10}
 \contentsline {section}{\numberline {1.11}Apology to Korean culture}{26}{section.1.11}
 \contentsline {chapter}{\numberline {2}October 2011}{27}{chapter.2}
 \contentsline {section}{\numberline {2.1}Strikeout}{28}{section.2.1}
 \contentsline {section}{\numberline {2.2}fml}{31}{section.2.2}
 \contentsline {section}{\numberline {2.3}NRB}{32}{section.2.3}
-\contentsline {section}{\numberline {2.4}We didn't start the fire...}{34}{section.2.4}
-\contentsline {section}{\numberline {2.5}It's raining in paradise}{38}{section.2.5}
-\contentsline {section}{\numberline {2.6}Culinary adventures I.}{40}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}The regular place}{41}{subsection.2.6.1}
+\contentsline {section}{\numberline {2.4}We didn't start the fire{\dots }}{35}{section.2.4}
+\contentsline {section}{\numberline {2.5}It's raining in paradise}{39}{section.2.5}
+\contentsline {section}{\numberline {2.6}Culinary adventures I.}{41}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}The regular place}{42}{subsection.2.6.1}
 \contentsline {chapter}{\numberline {3}November 2011}{43}{chapter.3}
-\contentsline {section}{\numberline {3.1}You know you are in Tokyo when...}{44}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}...the banner at the airport says ``Welcome to Japan''}{44}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}...a panda in a cape tells you not to put your hands into the doors}{44}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}...talking on the phone in the subway is highly discouraged.}{44}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}...the subway system map is one big clusterfuck.}{45}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}...everything is more expensive than in Seoul. }{45}{subsection.3.1.5}
-\contentsline {subsection}{\numberline {3.1.6}...taxis are extremely expensive}{46}{subsection.3.1.6}
-\contentsline {subsection}{\numberline {3.1.7}...girls are not wearing skirts.}{47}{subsection.3.1.7}
-\contentsline {subsection}{\numberline {3.1.8}...you go to a Maid Café.}{47}{subsection.3.1.8}
-\contentsline {subsection}{\numberline {3.1.9}...people use three alphabets and you can't understand either of them.}{48}{subsection.3.1.9}
-\contentsline {subsection}{\numberline {3.1.10}...everything is überclean.}{48}{subsection.3.1.10}
-\contentsline {subsection}{\numberline {3.1.11}...you sometimes feel like you are a part of a big freak show.}{49}{subsection.3.1.11}
+\contentsline {section}{\numberline {3.1}You know you are in Tokyo when{\dots }}{44}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}{\dots }the banner at the airport says ``Welcome to Japan''}{44}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}{\dots }a panda in a cape tells you not to put your hands into the doors}{44}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}{\dots }talking on the phone in the subway is highly discouraged.}{44}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}{\dots }the subway system map is one big clusterfuck.}{45}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}{\dots }everything is more expensive than in Seoul. }{45}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}{\dots }taxis are extremely expensive}{46}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7}{\dots }girls are not wearing skirts.}{47}{subsection.3.1.7}
+\contentsline {subsection}{\numberline {3.1.8}{\dots }you go to a Maid Café.}{47}{subsection.3.1.8}
+\contentsline {subsection}{\numberline {3.1.9}{\dots }people use three alphabets and you can't understand either of them.}{48}{subsection.3.1.9}
+\contentsline {subsection}{\numberline {3.1.10}{\dots }everything is überclean.}{48}{subsection.3.1.10}
+\contentsline {subsection}{\numberline {3.1.11}{\dots }you sometimes feel like you are a part of a big freak show.}{49}{subsection.3.1.11}
 \contentsline {section}{\numberline {3.2}Between the South and the North}{50}{section.3.2}
 \contentsline {section}{\numberline {3.3}The Best College Day™}{56}{section.3.3}
 \contentsline {section}{\numberline {3.4}Fieeeeeeld triiiiiip!}{58}{section.3.4}
 \contentsline {section}{\numberline {3.5}Culinary Adventures II.}{62}{section.3.5}
 \contentsline {subsection}{\numberline {3.5.1}Fast foods}{63}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}Tonkatsu!}{64}{subsection.3.5.2}
-\contentsline {section}{\numberline {3.6}Time goes by...}{66}{section.3.6}
+\contentsline {section}{\numberline {3.6}Time goes by{\dots }}{66}{section.3.6}
 \contentsline {section}{\numberline {3.7}Experience the future (and the past)}{68}{section.3.7}
 \contentsline {section}{\numberline {3.8}Shine Your Light}{73}{section.3.8}
 \contentsline {chapter}{\numberline {4}December 2011}{77}{chapter.4}

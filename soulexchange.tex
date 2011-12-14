@@ -44,6 +44,7 @@
 \usepackage[tight,footnotesize,IT]{subfigure}
 \usepackage[labelformat=empty,font={footnotesize,it},skip=5pt]{caption}
 \usepackage[pdftitle={S(e)oul eXchange}, pdfauthor={Honza Ustohal}, bookmarks=true, colorlinks=false, unicode=true]{hyperref}
+\usepackage[left]{eurosym}
 
 %\usepackage{atbegshi}
 
@@ -93,16 +94,16 @@
 \tikzset{pagefooter/.style={
 anchor=base,
 text=white,fill=LightPlum,text centered,
-text depth=15mm,text width=\pagenumwidth}}
+text depth=13mm,text width=\pagenumwidth}}
 
 \fancypagestyle{headings}{%
   \fancyhf{} 
-  \fancyhead[LO,RE]{\textit{S(e)oul eXchange}}
+  \fancyhead[LO,RE]{\textit{Seoul Exchange}}
   \fancyhead[RO,LE]{{\rightmark}}
   \fancyfoot[RO,LE]{\tikz[baseline]\node[pagefooter]{\thepage};}
   \fancyfoot[LO,RE]{}
-  \renewcommand{\headrulewidth}{0.1pt}
-  \renewcommand{\footrulewidth}{0pt}
+  \renewcommand{\headrulewidth}{0.25pt}
+  \renewcommand{\footrulewidth}{0.25pt}
 }
 
 \fancypagestyle{plain}{%
@@ -122,9 +123,8 @@ text depth=15mm,text width=\pagenumwidth}}
 
 %%% Post data
 
-\newenvironment{post}[0]{}{\vskip 10pt
-\hrule
-{\color{Aluminium3}\itshape\small \postmeta}\clearpage}
+\newenvironment{post}[0]{}{%\hrule
+{\hfill\color{Aluminium3}\itshape \textbullet\textbullet\textbullet\ \postmeta}\clearpage}
 
 \newenvironment{content}[0]{}{\vfill}
 
@@ -156,7 +156,7 @@ text depth=15mm,text width=\pagenumwidth}}
 \titleformat{\chapter}{\gdef\chapterlabel{}\Huge\bfseries}{\gdef\chapterlabel{}}{0pt}
   {\begin{tikzpicture}[remember picture,overlay]
   \node[anchor=west,text width=\textwidth,align=left,xshift=0pt] at (0,0) {{\normalfont\itshape\Large{\monthstuff}}};
-  \node[anchor=west,text width=\textwidth,align=right,xshift=-5pt,yshift=-150pt] at (0,0) {\chapterlabel#1};
+  \node[anchor=west,text width=\textwidth,align=right,xshift=-7.5pt,yshift=-150pt] at (0,0) {\TB\chapterlabel#1};
   \draw[line width=1pt,draw=Plum,yshift=-165pt](0,0) -- (\textwidth,0);
    \end{tikzpicture}
    }
@@ -166,7 +166,7 @@ text depth=15mm,text width=\pagenumwidth}}
 \def\posttitle{}
 \def\monthstuff{}
 
-\titleformat{\section}{\huge\bfseries}{\textcolor{LightSkyBlue}{\normalfont\TL\postd\ \ //\ \ }}{0pt}{{\TB #1}}
+\titleformat{\section}{\huge\bfseries}{\textcolor{LightSkyBlue}{\normalfont\TL\postd\ \ \textbullet\textbullet\textbullet\ \ }}{0pt}{{\TB #1}}
 \titlespacing*{\section}{0pt}{0pt}{0pt}
 
 \titleformat{\subsection}{\large}{}{0pt}{\large\textcolor{Plum}{\textbf{#1}}}
@@ -182,15 +182,23 @@ text depth=15mm,text width=\pagenumwidth}}
 %%% Font setting
 
 \defaultfontfeatures{Mapping=tex-text}
-\setromanfont[Mapping=tex-text]{Myriad Pro}
+\setromanfont[Mapping=tex-text]{Cabin Regular}
+\setmonofont[Mapping=tex-text]{Consolas}
 
-\newfontfamily{\H}{Nanum Myeongjo}
+\newfontfamily{\H}[Scale=0.9]{Nanum Myeongjo}
 \newfontfamily{\L}{Myriad Pro Light}
 \newfontfamily{\R}{Georgia}
-%\newfontfamily{\T}{Champagne & Limousines}
-\newfontfamily{\TL}{Diavlo Light Regular}
-\newfontfamily{\TR}{Diavlo Book Regular}
-\newfontfamily{\TB}{Diavlo Black Regular}
+
+% Diavlo
+%\newfontfamily{\TL}{Diavlo Light Regular}
+%\newfontfamily{\TR}{Diavlo Book Regular}
+%\newfontfamily{\TB}{Diavlo Black Regular}
+
+% Terminal Dosis
+\newfontfamily{\TL}{Terminal Dosis Light}
+\newfontfamily{\TR}{Terminal Dosis Book}
+\newfontfamily{\TB}{Terminal Dosis Bold}
+
 \newfontfamily{\Minion}{Minion Pro}
 
 %%%
@@ -208,14 +216,35 @@ text depth=15mm,text width=\pagenumwidth}}
 \captionsetup[figure]{labelformat=empty,font={footnotesize,it},skip=5pt}
 \renewcommand{\thesubfigure}{}
 
+\renewcommand{\EUR}[1]{€\,#1}
+
 %%%%%
 \begin{document}
 
-\input{titlepage}
+%\input{titlepage}
 
-\thispagestyle{empty}
+\begin{titlepage}
 
 \newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+\thispagestyle{empty}
+{\fontsize{110}{110}\TB SEOUL\\EXCHANGE}
+
+
+{\addtolength{\leftskip}{40mm}\textit{\Huge\Minion ``One blue-eyed boy in a sea of rice, kimchi, K-POP and mobile phones.''}}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\end{titlepage}
 
 \setcounter{page}{1}
 
@@ -241,5 +270,34 @@ text depth=15mm,text width=\pagenumwidth}}
 
 \input{12}
 
+
+%%% Closing
+
+\fancyhead[LE,RO]{}
+
+\chapter*{Closing}
+
+\input{closing}
+
+\chapter*{About the author}
+
+\clearpage
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+\centering\fbox{\includegraphics[width=0.4\textwidth]{photos/me.jpg}}
+\vspace{-24pt}
+\end{wrapfigure}I am \textbf{Honza}, a 23yr old Czech guy, currently residing in Seoul, South Korea, where I do my exchange semester at the KAIST Business School. When not in Asia, I live in The Netherlands, where I pursue a master degree in Management of Technology at the Delft University of Technology. However, my true home is still in Prague, the most beautiful city in the universe.
+
+When not studying, I like to ride my mountain bike, go running, play golf, play my bass guitar, read a book (paper+Kindle) or watch a movie. I seriously love music, not only as a listener, but also as an artist.
+
+I am a geek and I do not feel ashamed of it. I like modern technologies, innovation and gadgets. I use a Mac, but I know what a command-line is and that \texttt{rm -rf} should never be followed by a \texttt{/}.
+
+If you want to contact me, feel free to write me an e-mail: \url{honza@egoistic.biz}
+
+{
+\newpage
+\thispagestyle{empty}
+\mbox{}
+}
 
 \end{document}  
